@@ -2,9 +2,11 @@
 
 
 use Illuminate\Support\Facades\Route;
-use App\Livewire\Escolas;
+use App\Livewire\Curriculos;
+use App\Livewire\Disciplinas;
 
-Route::get('/', Escolas::class);
+Route::get('/disciplina', Disciplinas::class);
+Route::get('/curriculo', Curriculos::class);
 
 
 

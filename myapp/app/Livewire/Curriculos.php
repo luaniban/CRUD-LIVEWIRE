@@ -3,18 +3,23 @@
 namespace App\Livewire;
 
 use Livewire\Component;
-use App\Models\Escola;
+use App\Models\Curriculo;
+use Livewire\WithPagination;
 
-class Escolas extends Component
+class Curriculos extends Component
 {
-    public $escola,$escolas, $serie, $bimestre, $linguagem, $codigo, $descricao, $objeto_conhecimento, $discplina_id, $nivel_ensino, $origem, $escola_id, $id;
+
+    use WithPagination;
+    public $curriculo,$curriculos, $serie, $bimestre, $linguagem, $codigo, $descricao, $objeto_conhecimento, $discplina_id, $nivel_ensino, $origem, $curriculo_id, $id;
     public $modalCreate = 0;
     public $modalEdit = 0;
 
+    public $pcurriculosPerPage = 5;
+
     public function render()
     {
-        $this->escolas = Escola::all();
-        return view('livewire.escolas');
+        //$this->curriculos = Curriculo::all();
+        return view('livewire.Curriculo.curriculos', ['pcurriculos' => Curriculo::orderBy('id', 'asc')->paginate($this->pcurriculosPerPage)]);
     }
 
 
@@ -74,7 +79,7 @@ class Escolas extends Component
 
         ]);
 
-        Escola::create([
+        Curriculo::create([
             'serie' => $this->serie,
             'bimestre' => $this->bimestre,
             'linguagem' => $this->linguagem,
@@ -92,17 +97,17 @@ class Escolas extends Component
 
     public function edit($id)
     {
-        $escola = Escola::findOrFail($id);
-        $this->escola_id = $id;
-        $this->serie = $escola->serie;
-        $this->bimestre = $escola->bimestre;
-        $this->linguagem = $escola->linguagem;
-        $this->codigo = $escola->codigo;
-        $this->descricao = $escola->descricao;
-        $this->objeto_conhecimento = $escola->objeto_conhecimento;
-        $this->discplina_id = $escola->discplina_id;
-        $this->nivel_ensino = $escola->nivel_ensino;
-        $this->origem = $escola->origem;
+        $curriculo = Curriculo::findOrFail($id);
+        $this->curriculo_id = $id;
+        $this->serie = $curriculo->serie;
+        $this->bimestre = $curriculo->bimestre;
+        $this->linguagem = $curriculo->linguagem;
+        $this->codigo = $curriculo->codigo;
+        $this->descricao = $curriculo->descricao;
+        $this->objeto_conhecimento = $curriculo->objeto_conhecimento;
+        $this->discplina_id = $curriculo->discplina_id;
+        $this->nivel_ensino = $curriculo->nivel_ensino;
+        $this->origem = $curriculo->origem;
 
 
         $this->openModalEdit();
@@ -128,10 +133,10 @@ class Escolas extends Component
 
         ]);
 
-        $escolas = Escola::findOrFail($this->escola_id);
+        $curriculos = Curriculo::findOrFail($this->curriculo_id);
 
 
-        $escolas->update([
+        $curriculos->update([
             'serie' => $this->serie,
             'bimestre' => $this->bimestre,
             'linguagem' => $this->linguagem,
@@ -152,6 +157,6 @@ class Escolas extends Component
 
     public function delete($id)
     {
-        Escola::find($id)->delete();
+        Curriculo::find($id)->delete();
     }
 }

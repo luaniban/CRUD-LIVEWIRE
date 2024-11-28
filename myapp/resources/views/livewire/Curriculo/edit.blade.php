@@ -1,5 +1,5 @@
 <div style="width: 300px; display: flex; justify-content: space-between; margin: 10px">
-    <h1 style="font-size: 25px; background-color: rgb(211, 211, 211); border-radius: 10px; padding: 4px 10px ;">Editar Disciplina</h1>
+    <h1 style="font-size: 25px; background-color: rgb(211, 211, 211); border-radius: 10px; padding: 4px 10px ;">Editar Curriculo</h1>
     <button wire:click.prevent="closeModalEdit()" type="button" style="font-size: 30px;">
         &times;
     </button>

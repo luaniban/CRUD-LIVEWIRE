@@ -2,12 +2,12 @@
 
 namespace Database\Factories;
 
-use App\Models\Escola;
+use App\Models\Curriculo;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class EscolaFactory extends Factory
+class CurriculoFactory extends Factory
 {
-    protected $model = Escola::class;
+    protected $model = Curriculo::class;
 
     public function definition()
     {
