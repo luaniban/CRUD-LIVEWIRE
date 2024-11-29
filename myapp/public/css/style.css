@@ -4,10 +4,10 @@ table, th, td {
 
     text-align: center;
 
-
-
-
 }
+
+
+
 
 
 
@@ -17,6 +17,7 @@ th {
 }
 
 .acoes {
+
     border: 0px;
     display: flex;
     align-items: center;
@@ -97,7 +98,13 @@ tr:hover {
 
 .body {
 
-    width: 1500px;
+    width: 1000px;
     background-color: rgb(248, 244, 244);
 
 }
+
+.bodyEdit {
+    width: 1000px;
+    background-color: rgb(248, 244, 244);
+}
+

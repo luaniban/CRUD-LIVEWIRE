@@ -1,5 +1,12 @@
-<div class="body">
+
+<div>
+
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
+
+
+
     @if($modalEdit)
     @include('livewire.Curriculo.edit')
     @endif
@@ -11,7 +18,10 @@
 
 
 
-    <button class="botaoCreate" wire:click="create()">Criar Curriculo</button>
+
+    <x-tsbutton class="ml-5" wire:click="create()">Criar Curriculo</x-tsbutton>
+
+
     <table class="table">
 
 
@@ -49,13 +59,13 @@
                         <td>{{ $curriculo->discplina_id }}</td>
                         <td>{{ $curriculo->nivel_ensino }}</td>
                         <td >{{ $curriculo->origem }}</td>
-                        <td class="acoes">
 
-                            <button class="botaoEdit" wire:click="edit({{ $curriculo->id }})"  >Edit</button>
-                            <button class="botaoDelete" swire:click="delete({{ $curriculo->id }})" >Delete</button>
-                            @endforeach
+                            <td class="acoes">
 
-                        </td>
+                                <x-tsbutton.circle icon="pencil"  wire:click="edit({{ $curriculo->id }})"  >Edit</x-tsbutton.circle>
+                                <x-tsbutton.circle icon="trash" wire:click="delete({{ $curriculo->id }})" class="ml-2 bg-red-500 hover:bg-red-600">Delete</x-tsbutton.circle>
+                                @endforeach
+                            </td>
                     </tr>
                 </div>
 

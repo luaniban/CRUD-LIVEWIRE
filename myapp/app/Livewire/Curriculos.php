@@ -9,10 +9,15 @@ use Livewire\WithPagination;
 class Curriculos extends Component
 {
 
+    
+
     use WithPagination;
     public $curriculo,$curriculos, $serie, $bimestre, $linguagem, $codigo, $descricao, $objeto_conhecimento, $discplina_id, $nivel_ensino, $origem, $curriculo_id, $id;
     public $modalCreate = 0;
     public $modalEdit = 0;
+
+
+
 
     public $pcurriculosPerPage = 5;
 

@@ -6,11 +6,13 @@ use App\Livewire\Curriculos;
 use App\Livewire\Disciplinas;
 
 Route::get('/disciplina', Disciplinas::class);
-Route::get('/curriculo', Curriculos::class);
+Route::get('/curriculo', Curriculos::class)->name('curriculo');
 
 
 
-
+Route::get('/', function () {
+    return view('welcome');
+});
 
 
 Route::middleware([

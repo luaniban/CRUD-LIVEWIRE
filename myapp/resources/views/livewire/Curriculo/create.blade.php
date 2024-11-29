@@ -1,63 +1,59 @@
-<div style="width: 300px; display: flex; justify-content: space-between; margin: 10px">
-    <h1 style="font-size: 25px; background-color: rgb(211, 211, 211); border-radius: 10px; padding: 4px 10px ;">Criar Curriculo</h1>
-    <button wire:click.prevent="closeModalCreate()" type="button" style="font-size: 30px;">
-        &times;
-    </button>
+
+<div class="ml-1" style="width: 300px; display: flex;  margin: 10px align-items: center" >
+    <h1 style="font-size: 25px;  padding: 4px 10px ;">Criar Curriculo</h1>
+    <x-tsbutton.circle class="mt-1 ml-4 " icon="x-mark" wire:click.prevent="closeModalCreate()" type="button" style="font-size: 30px; " >
+
+    </x-tsbutton.circle>
 </div>
+<div style="display: flex; flex-wrap: wrap; width: 1000px">
 
-<div style="display: flex; flex-wrap: wrap;">
+    <div class="mx-4 my-4 ">
+        <x-tsinput label="Série *" hint="Insira a série" wire:model="serie" style="width: 270px" />
+
+    </div>
+    <div ></div>
+
+        <div class="mx-4 my-4">
+        <x-tsselect.native :options="[1,2,3]" wire:model="bimestre" label="Bimestre *" style="width: 270px" />
 
 
 
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="serie">Serie</label>
-                        <input type="text" placeholder="Digite a serie" wire:model="serie">
-                        @error('serie') <span>{{ $message }}</span>@enderror
-                    </div>
-                    <div ></div>
+        </div>
 
-                        <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="bimestre">Bimestre</label>
-                        <input type="text" placeholder="Digite o bimestre" wire:model="bimestre">
-                        @error('bimestre') <span >{{ $message }}</span>@enderror
-                        </div>
+    <div class="mx-4 my-4">
+        <x-tsinput label="Linguagem *" hint="Insira a linguagem" wire:model="linguagem" style="width: 270px"/>
 
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column; height: 50px">
-                        <label for="linguagem">Linguagem</label>
-                        <input type="text"  placeholder="Digite a linguagem" wire:model="linguagem">
-                        @error('linguagem') <span >{{ $message }}</span>@enderror
-                    </div>
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="codigo">Codigo</label>
-                        <input type="text" placeholder="Digite o codigo" wire:model="codigo">
-                        @error('codigo') <span >{{ $message }}</span>@enderror
-                    </div>
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="descricao">Descrição</label>
-                        <input type="text" placeholder="Digite a descrição" wire:model="descricao">
-                        @error('descricao') <span >{{ $message }}</span>@enderror
-                    </div>
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="objeto_conhecimento">Objeto de conhecimento</label>
-                        <input type="text" placeholder="Digite o objeto de conhecimento" wire:model="objeto_conhecimento">
-                        @error('objeto_conhecimento') <span >{{ $message }}</span>@enderror
-                    </div>
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="discplina_id">Id da disciplina</label>
-                        <input type="text" placeholder="Digite o id da disciplina" wire:model="discplina_id">
-                        @error('discplina_id') <span >{{ $message }}</span>@enderror
-                    </div>
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="nivel_ensino">Nivel de ensino</label>
-                        <input type="text" placeholder="Digite o nivel de ensino" wire:model="nivel_ensino">
-                        @error('nivel_ensino') <span >{{ $message }}</span>@enderror
-                    </div>
+    </div>
+    <div class="mx-4 my-4">
+        <x-tsinput label="Codigo *" hint="Insira o código" wire:model="codigo" style="width: 270px"/>
 
-                    <div style="margin: 10px; width: 230px; display: flex; flex-direction: column;">
-                        <label for="origem">Origem</label>
-                        <input type="text" placeholder="Digite a origem" wire:model="origem">
-                        @error('origem') <span >{{ $message }}</span>@enderror
-                    </div>
+    </div>
+    <div class="mx-4 my-4">
+        <x-tsinput label="Descrição *" hint="Insira a descrição" wire:model="descricao" style="width: 270px"/>
+
+    </div>
+    <div class="mx-4 my-4">
+        <x-tsinput label="Objeto de conhecimento *" hint="Insira o objeto de conhecimento" wire:model="objeto_conhecimento" style="width: 270px"/>
+
+    </div>
+    <div class="mx-4 my-4">
+        <x-tsinput label="Id da disciplina *" hint="Insira o id da disciplina" wire:model="discplina_id" style="width: 270px"/>
+
+    </div>
+    <div class="mx-4 my-4">
+        <x-tsselect.native  :options="[
+        ['label' => 'Fundamental 1', 'value' => 'fundamental_1'],
+        ['label' => 'Fundamental 2', 'value' => 'fundamental_2'],
+        ['label' => 'Integrado 1', 'value' => 'integrado_1'],
+        ['label' => 'Integrado 2', 'value' => 'Integrado_2'],
+        ]" select="label:label|value:value" wire:model='nivel_ensino' label="Nivel de ensino *" style='width: 270px' hint="Insira o nivel de ensino"/>
+
+    </div>
+
+    <div class="mx-4 my-4">
+        <x-tsinput label="Origem *" hint="Insira a origem" wire:model="origem" style="width: 270px"/>
+
+    </div>
 
 
 
@@ -66,10 +62,11 @@
 
 
 
-            </div>
+</div>
             <div style="margin: 10px; width: 250px; display: flex; ">
 
                 <button wire:click.prevent="store()" type="button" style="  background-color: rgb(104, 162, 238); border-radius: 10px; padding: 4px 6px ;">Criar</button>
             </div>
 </div>
+
 

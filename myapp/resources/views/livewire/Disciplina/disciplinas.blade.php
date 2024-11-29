@@ -1,6 +1,13 @@
 <div class="body">
 
+
+
+    
+
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+
+
     @if($modalEdit)
     @include('livewire.Disciplina.edit')
     @endif
@@ -53,5 +60,6 @@
     </div>
 
 
+        <form action="" class=""></form>
 
 </div>
