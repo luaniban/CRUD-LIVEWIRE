@@ -14,14 +14,17 @@ class Disciplinas extends Component
     public $modalCreate = 0;
     public $modalEdit = 0;
     public $pdisciplinaPerPage = 5;
-
+    public $search = '';
     public function render()
     {
 
+        $results = [];
 
+        if(strlen($this->search) >= 1) {
+            $results = Disciplina::where('code', 'like', '%' . $this->search . '%')->limit(5)->get();}
         //$this->disciplinas = Disciplina::all();
         //dd($this->disciplinas);
-        return view('livewire.Disciplina.disciplinas', ['pdisciplina' => Disciplina::orderBy('id', 'asc')->paginate($this->pdisciplinaPerPage)]);
+        return view('livewire.Disciplina.disciplinas', ['pdisciplina' => Disciplina::orderBy('id', 'desc')->paginate($this->pdisciplinaPerPage), 'disciplinasSearch' => $results]);
     }
 
 

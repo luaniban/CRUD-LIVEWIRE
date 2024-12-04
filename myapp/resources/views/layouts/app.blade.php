@@ -1,5 +1,9 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<!DOCTYPE html >
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
+    x-data="tallstackui_darkTheme()"
+    x-bind:class="{ 'dark bg-gray-700': darkTheme, 'bg-white': !darkTheme }">
+
+
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +26,7 @@
 
     </head>
     <body class="font-sans antialiased">
-        <x-banner />
+        <x-tsbanner wire/>
 
         <div class="min-h-screen bg-gray-100">
             @livewire('navigation-menu')
@@ -37,7 +41,7 @@
             @endif
 
             <!-- Page Content -->
-            <main>
+            <main class="flex justify-center">
                 {{ $slot }}
             </main>
         </div>

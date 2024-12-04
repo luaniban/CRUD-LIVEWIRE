@@ -2,30 +2,49 @@
 
 namespace App\Livewire;
 
+use illuminate\http\Request;
 use Livewire\Component;
 use App\Models\Curriculo;
+use App\Models\Disciplina;
 use Livewire\WithPagination;
+use TallStackUi\Traits\Interactions;
+use TallStackUi\View\Components\Modal;
+use Illuminate\Database\Eloquent\Builder;
+
 
 class Curriculos extends Component
 {
 
-    
+    use Interactions;
 
     use WithPagination;
+
+
     public $curriculo,$curriculos, $serie, $bimestre, $linguagem, $codigo, $descricao, $objeto_conhecimento, $discplina_id, $nivel_ensino, $origem, $curriculo_id, $id;
     public $modalCreate = 0;
     public $modalEdit = 0;
 
 
+    public ?int $quantity = 10;
+    public $search = "";
 
 
     public $pcurriculosPerPage = 5;
 
     public function render()
+
     {
         //$this->curriculos = Curriculo::all();
-        return view('livewire.Curriculo.curriculos', ['pcurriculos' => Curriculo::orderBy('id', 'asc')->paginate($this->pcurriculosPerPage)]);
+
+
+        $results = [];
+
+        if(strlen($this->search) >= 1) {
+            $results = Curriculo::where('codigo', 'like', '%' . $this->search . '%')->limit(5)->get();
+        }
+        return view('livewire.Curriculo.curriculos', ['pcurriculos' => Curriculo::orderBy('id', 'desc')->paginate($this->pcurriculosPerPage), 'curriculosSearch' => $results]);
     }
+
 
 
 
@@ -98,6 +117,12 @@ class Curriculos extends Component
 
         $this->closeModalCreate();
         $this->resetInputFields();
+
+        $this->banner()
+        ->success('Curriculo criado com sucesso', 'Atualização do curriculo')
+        ->flash()
+        ->leave(3)
+        ->send();
     }
 
     public function edit($id)
@@ -122,8 +147,6 @@ class Curriculos extends Component
 
     public function update()
     {
-
-
 
         $this->validate([
             'serie' => 'required',
@@ -154,14 +177,32 @@ class Curriculos extends Component
         ]);
 
 
-
-
         $this->closeModalEdit();
         $this->resetInputFields();
+
+        $this->banner()
+        ->success('Curriculo atualizado com sucesso', 'Atualização do curriculo')
+        ->flash()
+        ->leave(3)
+        ->send();
+
+        return $this->redirect(route('dashboard'));
     }
+
+
 
     public function delete($id)
     {
+
         Curriculo::find($id)->delete();
+
     }
+
+
+
 }
+
+
+
+
+

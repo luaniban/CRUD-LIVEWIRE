@@ -11,4 +11,6 @@ class Curriculo extends Model
     use HasFactory;
 
     protected $fillable = ['serie', 'bimestre', 'linguagem', 'codigo', 'descricao', 'objeto_conhecimento', 'discplina_id', 'nivel_ensino', 'origem'];
+
+    
 }

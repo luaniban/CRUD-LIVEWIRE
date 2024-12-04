@@ -8,6 +8,8 @@ import typography from '@tailwindcss/typography';
 
 export default {
 
+
+    darkMode: 'class',
     presets: [
         require('./vendor/tallstackui/tallstackui/tailwind.config.js')
     ],
@@ -23,7 +25,7 @@ export default {
 
         //
 
-        
+
         './vendor/tallstackui/tallstackui/src/**/*.php',
     ],
 
