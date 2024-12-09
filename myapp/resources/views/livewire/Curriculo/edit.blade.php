@@ -14,6 +14,7 @@
                 </div>
                 <div ></div>
 
+                
                     <div class="mx-4 my-4">
                     <x-tsselect.native :options="[1,2,3]" wire:model="bimestre" label="Bimestre *" style="width: 270px" />
 

@@ -91,7 +91,7 @@
                             <td class="acoes">
 
                                 <x-tsbutton.circle icon="pencil"  wire:click="edit({{ $curriculo->id }})"  >Edit</x-tsbutton.circle>
-                                <x-tsbutton.circle icon="trash" wire:click="delete({{ $curriculo->id }})" class="ml-2 bg-red-500 hover:bg-red-600">Delete</x-tsbutton.circle>
+                                <x-tsbutton.circle wire:confirm="Você tem certeza que deseja deletar o {{ $curriculo->codigo }}?" icon="trash" wire:click="delete({{ $curriculo->id }})" class="ml-2 bg-red-500 hover:bg-red-600">Delete</x-tsbutton.circle>
 
 
                                 @endforeach
@@ -111,5 +111,11 @@
         <div class="pagination">
             {{ $pcurriculos->links() }}
         </div>
+
+
+
+
+
+
     </div>
 

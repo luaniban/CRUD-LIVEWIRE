@@ -1,4 +1,4 @@
-<div class="p-4 mt-4 bg-white" style="border-radius: 10px;>
+<div class="p-4 mt-4 bg-white" style="border-radius: 10px;">
 
 
 
@@ -39,12 +39,16 @@
         @endif
         </div>
     </form>
+
     <x-tsbutton id="createBottom" class="h-12 bg-white border-blue-700 shadow-md hover:bg-blue-300" wire:click="create()">
-        <x-tsicon name="user-plus" outiline class="w-5 h-5 text-blue-700"/><span class="text-blue-700">Criar Curriculo</span>
+        <x-tsicon name="user-plus" outiline class="w-5 h-5 text-blue-700"/><span class="text-blue-700">Criar Disciplina</span>
     </x-tsbutton>
+
+    </div>
 
     <table class="table">
 
+    <div>
         <thead>
 
 

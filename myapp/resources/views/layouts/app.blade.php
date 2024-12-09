@@ -1,7 +1,6 @@
 <!DOCTYPE html >
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}"
-    x-data="tallstackui_darkTheme()"
-    x-bind:class="{ 'dark bg-gray-700': darkTheme, 'bg-white': !darkTheme }">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
 
 
     <head>
@@ -48,6 +47,11 @@
 
         @stack('modals')
 
-        @livewireScripts
+      
+
+
     </body>
 </html>
+
+
+

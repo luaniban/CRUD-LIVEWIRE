@@ -34,7 +34,7 @@
 </div>
         <div style="margin: 10px; width: 250px; display: flex; ">
 
-            <x-tsbutton wire:click.prevent="update()"  type="button" style="  background-color: rgb(104, 162, 238); border-radius: 10px; ;">Save</x-tsbutton>
+            <x-tsbutton wire:click.prevent="store()"  type="button" style="  background-color: rgb(104, 162, 238); border-radius: 10px; ;">Save</x-tsbutton>
         </div>
 
 </div>

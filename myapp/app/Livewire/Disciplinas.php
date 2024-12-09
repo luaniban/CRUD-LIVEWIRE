@@ -82,6 +82,8 @@ class Disciplinas extends Component
             'is_integral' => $this->is_integral,
         ]);
 
+
+
         $this->closeModalCreate();
         $this->resetInputFields();
     }

@@ -60,6 +60,7 @@ class Curriculos extends Component
 
     public function create()
     {
+        
         $this->resetInputFields();
         $this->openModalCreate();
     }
