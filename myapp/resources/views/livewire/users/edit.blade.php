@@ -2,7 +2,7 @@
 <div>
     @if($modalEdit == true)
 
-    <div style="width: 1000px; height: 500px; background-color: rgb(230, 225, 225); margin-top: 10px; padding: 10px; border-radius: 10px;">
+    <div style="width: 1000px; height: 500px; background-color: rgb(247, 237, 237); margin-top: 10px; padding: 10px; border-radius: 10px;">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <div class="ml-1" style="width: 300px; display: flex;  margin: 10px align-items: center" >
             <h1 style="font-size: 25px;  padding: 4px 10px ;">Editar Curriculo</h1>

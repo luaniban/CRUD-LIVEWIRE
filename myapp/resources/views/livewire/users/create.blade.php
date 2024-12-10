@@ -1,6 +1,6 @@
 <div>
     @if($modalCreate == true)
-        <div style="width: 1000px; height: 500px; background-color: rgb(230, 225, 225); margin-top: 10px; padding: 10px; border-radius: 10px;">
+        <div style="width: 1000px; height: 500px; background-color: rgb(247, 237, 237); margin-top: 10px; padding: 10px; border-radius: 10px;">
 
 
 
