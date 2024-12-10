@@ -16,7 +16,7 @@ class Delete extends Component
     public function delete($id){
 
        User::find($id)->delete();
-       session()->flash('success', 'Usuário Deletado');
+       $this->dispatch('usuarioDeletado');
     }
     public function render()
     {

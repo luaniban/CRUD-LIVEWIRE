@@ -26,8 +26,6 @@ class Index extends Component
         $this->modalEdit = false;
     }
 
-    public $search = '';
-    public $pUserPerPage = 5;
 
 
 

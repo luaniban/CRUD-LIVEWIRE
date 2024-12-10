@@ -9,7 +9,7 @@
 
 
     @if($modalEdit)
-    @include('livewire.Disciplina.edit')
+        @include('livewire.Disciplina.edit')
     @endif
 
 

@@ -7,9 +7,12 @@
 
     @if ($modalCreate == false)
 
-        <div style="display: block; background-color: rgb(196, 196, 196); margin-top: 30px;">
-            <div style="width: 100%; display: flex; justify-content: flex-end">
-            <x-tsbutton wire:click="openModalCreate()">Criar</x-tsbutton>
+        <div style="display: block; background-color: rgb(196, 196, 196); margin-top: 30px; margin-bottom: 30px; border-radius: 10px;">
+            <div style="width: 100%; display: flex; justify-content: flex-end; ">
+
+            <x-tsbutton  id="createBottom" class="h-12 bg-white border-blue-700 shadow-md hover:bg-blue-300" @click="$dispatch('post-create')">
+                <x-tsicon name="user-plus" outiline class="w-5 h-5 text-blue-700"/><span class="text-blue-700">Criar Usuário</span>
+            </x-tsbutton>
 
             </div>
 
@@ -19,13 +22,13 @@
             <livewire:users.edit/>
             </div>
             <livewire:users.delete/>
+            <div style="position: absolute; margin-top: 30px;">
+            <livewire:users.create/>
+            </div>
 
 
 
         </div>
-    @endif
-    @if($modalCreate == true)
-        <livewire:users.create>
     @endif
 
 

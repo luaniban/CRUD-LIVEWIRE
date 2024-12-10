@@ -48,7 +48,7 @@ class Edit extends Component
     public function edit($id)
     {
 
- 
+
 
         $user = User::findOrFail($id);
 
@@ -67,7 +67,9 @@ class Edit extends Component
 
         $this->validate([
             'name' => 'required|string|max:255',
-            'email' => 'required|email|max:255',
+            'email' => 'required',
+
+            //|email|max:255',
             'password' => 'nullable|min:6',
         ]);
 

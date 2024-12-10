@@ -3,6 +3,7 @@
 namespace App\Livewire\Users;
 use App\Models\User;
 use Livewire\Component;
+use Livewire\Attributes\On;
 
 class Create extends Component
 {
@@ -25,7 +26,7 @@ class Create extends Component
         $this->password = '';
     }
 
-
+    #[On('post-create')]
     public function create(){
         $this->resetInputFields();
         $this->openModalCreate();
@@ -42,11 +43,12 @@ class Create extends Component
         User::create([
             'name' => $this->name,
             'email' => $this->email,
-            'password' => bcrypt($this->password),
+            'password' => $this->password, //ou  bcrypt($this->password),
         ]);
 
         $this->closeModalCreate();
         $this->resetInputFields();
+        $this->dispatch('usuarioCriado');
     }
 
 
