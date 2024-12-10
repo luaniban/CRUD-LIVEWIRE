@@ -27,6 +27,7 @@
             <livewire:users.edit/>
             </div>
             <livewire:users.delete/>
+            <livewire:users.reset/>
             <div style="position: absolute; margin-top: 30px;">
             <livewire:users.create/>
             </div>

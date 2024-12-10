@@ -5,10 +5,10 @@
     <div style="width: 1000px; height: 500px; background-color: rgb(247, 237, 237); margin-top: 10px; padding: 10px; border-radius: 10px;">
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
         <div class="ml-1" style="width: 300px; display: flex;  margin: 10px align-items: center" >
-            <h1 style="font-size: 25px;  padding: 4px 10px ;">Editar Curriculo</h1>
-            <x-tsbutton.circle class="mt-1 ml-4 " icon="x-mark" wire:click.prevent="closeModalEdit()" type="button" style="font-size: 30px; " >
+            <h1 style="font-size: 25px;  padding: 4px 10px ;">Editar Usuário</h1>
+            <a class="mt-1 ml-4 text-gray-700" wire:click.prevent="closeModalEdit()" style="padding-top: 8px; cursor: pointer;">Cancelar</a>
 
-            </x-tsbutton.circle>
+            </a>
         </div>
                     <div style="display: flex; flex-wrap: wrap; width: 1000px">
 

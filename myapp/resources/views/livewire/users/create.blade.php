@@ -5,10 +5,8 @@
 
 
             <div style="display: flex; ">
-                <h1 style="font-size: 25px;  padding: 4px 10px ;">Criar Curriculo</h1>
-                <x-tsbutton.circle class="mt-1 ml-4 " icon="x-mark" wire:click.prevent="closeModalCreate()" type="button" style="font-size: 30px; " >
-
-                </x-tsbutton.circle>
+                <h1 style="font-size: 25px;  padding: 4px 10px ;">Criar Usuário</h1>
+                <a class="mt-1 ml-4 text-gray-700" wire:click.prevent="closeModalCreate()" style="padding-top: 8px; cursor: pointer;">Cancelar</a>
             </div>
             <div style="display: flex; flex-wrap: wrap; width: 1000px">
 

@@ -54,6 +54,14 @@
                             @click="$dispatch('post-delete', { id: '{{ $user->id }}' })">
                         </x-tsbutton.circle>
 
+                        <x-tsbutton.circle
+                        icon="key"
+                        class="ml-2 bg-yellow-500 hover:bg-yellow-600 focus:bg-yellow-600 focus:border-yellow-600" style="background-color: black;"
+                        @click="$dispatch('post-reset', { id: '{{ $user->id}}' })">
+                        </x-tsbutton.circle>
+
+
+
 
 
 

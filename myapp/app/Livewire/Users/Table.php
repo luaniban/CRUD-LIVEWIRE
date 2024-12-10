@@ -16,8 +16,7 @@ class Table extends Component
 
     #[On('usuarioDeletado')]
     #[On('usuarioCriado')]
-
-
+    #[On('reset')]
     public function render()
     {
 
